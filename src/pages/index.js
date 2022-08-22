@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Bounce from "../components/Bounce"
+/*import Bounce from "../components/Bounce"*/
 
+/*
+ * uncomment if we need to add a script 
 import Helmet from "react-helmet"
-import { withPrefix/*, Link*/ } from "gatsby"
+import { withPrefix/ *, Link* / } from "gatsby"*/
 
 export default function Home() {
     return (
@@ -17,9 +19,6 @@ export default function Home() {
                               <p className="text-center"><span>August 15, 2021 - </span> <a href={"./"}>My .vimrc File</a></p>
                           </div>
                       </section>
-                      <center>
-                          <Bounce />
-                      </center>
                   </Layout>
                   
       )

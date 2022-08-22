@@ -15,8 +15,11 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.0",
+    "fs": "^0.0.1-security",
+    "fs-secure": "^0.0.7",
     "gatsby": "^4.19.2",
     "gatsby-plugin-react-helmet": "^5.20.0",
+    "gatsby-source-filesystem": "^4.21.1",
     "normalize.css": "^8.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

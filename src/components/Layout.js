@@ -13,7 +13,7 @@ export default function Layout({ children }) {
                 <div className="content">
                     { children }
                 </div>
-                <footer>
+                <footer className="fixed-bottom">
                     Copyright 2022 coding w/ beto
                 </footer>
             </div>
