@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/gatsby-blog",
   /* Your site config here */
   plugins: [
       {
