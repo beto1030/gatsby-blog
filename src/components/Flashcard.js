@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+/*import React, { useState } from "react"*/
+import * as React from "react"
+import { StaticQuery, useStaticQuery, graphql } from "gatsby"
 
-export default function Flashcard({frontSide, backSide}) {
-    /*const [text, setText] = useState(frontSide)*/
-    const [isFront, changeFace] = useState(frontSide)
+const Flashcard = ({frontSide, backSide}) => {
+
+    const [isFront, changeFace] = React.useState(frontSide)
 
     function handleClick() {
         changeFace(oldState => {
-        /*changeFace(oldState => !oldState)*/
-            
             if(oldState === frontSide){
                 return !oldState; 
             } else {
@@ -17,39 +17,35 @@ export default function Flashcard({frontSide, backSide}) {
     }
 
     const text = isFront ? frontSide : backSide
-    const sideClass = isFront ? "" : "is-flipped"
-    const classList = `card__inner ${sideClass}`
-    /*const isFlipped = isFront ? `${classList}` : `${classList} is-flipped`*/
+    const sideClass = isFront ? "flipdiv v" : "flipdiv v showBack"
+    const classList = ` ${sideClass}`
+    
+    
 
     return (
-                      /*<div className="flashcard grid-item m-1 border" onClick={handleClick}>
-                        <div className={isFlipped}>
-                                        <p>{text}</p>
-                        </div>
-                      </div>*/
-        <div onClick={handleClick}className="card">
+            /*<div onClick={handleClick} className="card">
+                        <div className={classList}>
 
-            <div className={classList}>
-
-                <div className="card__face card__face--front">
-                    <h2>Front</h2>
-                </div>
-                <div className="card__face card__face--back">
-                    <div className="card__content">
-                        <div className="card__header">
-                            <img src="" alt="" />
-                            <h2></h2>
-                            <div className="card__body">
-                                <h3>Back</h3>
-                                <p></p>
+                            <div className="card__face card__face--front">
+                                <p className={sideClassDivFront} >{frontSide}</p>
                             </div>
+                            <div className="card__face stack-top card__face--back">
+                                <p className={sideClassDivBack}>{backSide}</p>
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
+            </div>*/
+          <div onClick={handleClick} className={classList}>
+              <div className="front border">
+                 <p>{frontSide}</p>
+              </div>
+              <div className="back border">
+                 <p>{backSide}</p>
+              </div>
+         </div>
       )
       
 }     
+
+
+export default Flashcard
